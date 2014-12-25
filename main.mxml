@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:JSON="com.adobe.serialization.json.*" 
+			   minWidth="955" minHeight="600">
+
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.rpc.events.ResultEvent;
+
+			
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				
+	    		newJSON.send();
+  				// TODO Auto-generated method stub
+			
+			}
+
+			protected function newJSON_resultHandler(event:ResultEvent):void
+			{
+				var jsonObj:Object =JSON.parse(event.result.toString());
+			 	
+			 this.heros.dataProvider=new ArrayCollection(jsonObj.Books.Book as Array);
+			}
+
+		]]>
+	</fx:Script>
+
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<s:HTTPService id="newJSON"
+					   url="http://newton510.twbbs.org/JSON-AS3/JSONTEST.json"   
+					    method="GET"
+					    resultFormat="text"
+		                result="newJSON_resultHandler(event)"> 
+			
+		</s:HTTPService> 
+	
+	</fx:Declarations>
+<s:Panel  title="get book from JSON" width="400" height="400" contentBackgroundColor="#335522" >
+	
+	<s:Button x="14" y="10" label="get JSON" click="button1_clickHandler(event)">
+		
+	</s:Button>
+	<s:DataGrid id="heros" x="14" y="40" width="90%" height="235" color="red"
+				contentBackgroundColor="#C9FAB0">
+       <s:columns>
+		   <s:ArrayList>
+			   <s:GridColumn headerText="serial" dataField="ID"/>
+			   <s:GridColumn headerText="Name" dataField="Name"/>
+			   <s:GridColumn headerText="date" dataField="Date"/>
+			   
+			   
+		   </s:ArrayList>	   
+	   </s:columns>
+		   
+		
+	</s:DataGrid>
+	
+	
+</s:Panel>
+
+</s:Application>
