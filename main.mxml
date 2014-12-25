@@ -23,7 +23,7 @@
 			{
 				var jsonObj:Object =JSON.parse(event.result.toString());
 			 	
-			 this.heros.dataProvider=new ArrayCollection(jsonObj.Books.Book as Array);
+			 this.showdg.dataProvider=new ArrayCollection(jsonObj.Books.Book as Array);
 			}
 
 		]]>
@@ -45,7 +45,7 @@
 	<s:Button x="14" y="10" label="get JSON" click="button1_clickHandler(event)">
 		
 	</s:Button>
-	<s:DataGrid id="heros" x="14" y="40" width="90%" height="235" color="red"
+	<s:DataGrid id="showdg" x="14" y="40" width="90%" height="235" color="red"
 				contentBackgroundColor="#C9FAB0">
        <s:columns>
 		   <s:ArrayList>
