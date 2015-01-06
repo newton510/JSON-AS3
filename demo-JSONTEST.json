@@ -4,23 +4,45 @@
 	{
             "ID": 1,
             "Name": "Ace",
-            "Date": "101/01/05"
-        
+            "Date": "101/01/05",
+            "Price" :200
     },
     {      
             "ID": 2,
             "Name": "Bill",
-            "Date": "102/02/08"
+            "Date": "102/02/08",
+            "Price" :300
     },
     {      
             "ID": 3,
             "Name": "Cook",
-            "Date": "103/03/08"
+            "Date": "103/03/08",
+            "Price" :250
     },
     {      
             "ID": 4,
             "Name": "David",
-            "Date": "104/04/08"
+            "Date": "104/04/08",
+            "Price" :350
+    },
+    {      
+            "ID": 5,
+            "Name": "Eric",
+            "Date": "103/05/08",
+            "Price" :220
+            
+    },
+    {      
+            "ID": 6,
+            "Name": "Frank",
+            "Date": "104/06/06",
+            "Price" :280
+    },
+    {      
+            "ID": 7,
+            "Name": "GooDiva",
+            "Date": "103/03/15",
+            "Price" :180
     }
     ]
 	}
